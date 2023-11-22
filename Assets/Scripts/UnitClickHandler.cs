@@ -94,24 +94,31 @@ public class UnitDragHandler : MonoBehaviour
 
         if (targetHex != null && movingUnit != null && !movingUnit.HasMoved)
         {
-            if (targetHex.unit != null && targetHex.unit.Strength == movingUnit.Strength)
+            if (targetHex.unit != null && targetHex.unit.OwnerId != movingUnit.OwnerId)
+            {
+                if (battleManager.CanCapture(targetHex, movingUnit))
+                {
+                    battleManager.HandleBattle(movingUnit, targetHex);
+                }
+                else
+                {
+                    ResetUnitPosition();
+                    Debug.Log("Attack not possible or not successful.");
+                }
+            }
+            else if (targetHex.unit != null && targetHex.unit.OwnerId == movingUnit.OwnerId && targetHex.unit.Strength == movingUnit.Strength)
             {
                 unitManager.MergeUnits(movingUnit, targetHex.unit);
             }
-            else if (battleManager.CanCapture(targetHex, movingUnit))
-            {
-                PerformUnitMove(targetHex, movingUnit);
-            }
             else
             {
-                ResetUnitPosition();
-                Debug.LogError("Cannot capture or merge with this hex.");
+                PerformUnitMove(targetHex, movingUnit);
             }
         }
         else
         {
             ResetUnitPosition();
-            Debug.LogError("Invalid move.");
+            Debug.Log("Invalid move.");
         }
     }
     

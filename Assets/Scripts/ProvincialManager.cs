@@ -6,16 +6,18 @@ public class ProvincialManager : MonoBehaviour
 {
     private MapManager mapManager;
     private BuildingManager buildingManager;
+    private UnitManager unitManager;
     public Color[] provinceColors;
     public int minimumProvinceDistance;
     public int provinceRadius;
     public Color neutralColor;
     public Dictionary<CubeIndex, Province> provinces = new Dictionary<CubeIndex, Province>();
 
-    public void Initialize(int totalPlayers, MapManager mapManager, BuildingManager buildingManager)
+    public void Initialize(int totalPlayers, MapManager mapManager, BuildingManager buildingManager,UnitManager unitManager)
     {
         this.mapManager = mapManager;
         this.buildingManager = buildingManager;
+        this.unitManager = unitManager;
         InitializeProvinces(totalPlayers);
     }
 
@@ -228,7 +230,7 @@ public class ProvincialManager : MonoBehaviour
                 }
             }
         }
-
+        
         foreach (Hex hex in province.Territory.ToList())
         {
             if (!connectedTerritory.Contains(hex))
@@ -236,6 +238,11 @@ public class ProvincialManager : MonoBehaviour
                 hex.Owner = null;
                 hex.UpdateColor(neutralColor);
                 province.Territory.Remove(hex);
+                
+                if (hex.unit != null)
+                {
+                    DestroyUnitInHex(hex.unit);
+                }
             }
         }
     }
@@ -255,5 +262,16 @@ public class ProvincialManager : MonoBehaviour
             }
         }
         return null;
+    }
+    
+    private void DestroyUnitInHex(Unit unit)
+    {
+        if (unit.Visual != null)
+        {
+            GameObject.Destroy(unit.Visual);
+        }
+        unit.CurrentHex.unit = null;
+
+        unitManager.RemoveUnit(unit, unit.CurrentHex.Coordinates);
     }
 }

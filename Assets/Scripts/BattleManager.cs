@@ -3,10 +3,12 @@ using UnityEngine;
 public class BattleManager : MonoBehaviour
 {
     private MapManager mapManager;
+    private UnitManager unitManager;
     
-    public void Initialize(MapManager mapManager)
+    public void Initialize(MapManager mapManager,UnitManager unitManager)
     {
         this.mapManager = mapManager;
+        this.unitManager = unitManager;
     }
 
     public bool CanCapture(Hex targetHex, Unit attackingUnit)
@@ -26,7 +28,7 @@ public class BattleManager : MonoBehaviour
                (hex.unit != null && hex.unit.OwnerId == ownerId);
     }
 
-    private int CalculateDefenseStrength(Hex hex, int attackingOwnerId)
+    public int CalculateDefenseStrength(Hex hex, int attackingOwnerId)
     {
         int defenseStrength = 0;
         
@@ -60,5 +62,22 @@ public class BattleManager : MonoBehaviour
         return defenseStrength;
     }
 
+    public void HandleBattle(Unit attacker, Hex defenderHex)
+    {
+        Unit defender = defenderHex.unit;
+        if (defender != null && attacker.OwnerId != defender.OwnerId)
+        {
+            if (attacker.Strength > defender.Strength)
+            {
+                unitManager.DestroyUnit(defender);
+                defenderHex.unit = null; 
+                unitManager.PerformUnitMove(defenderHex, attacker);
+            }
+            else
+            {
+                unitManager.DestroyUnit(attacker);
+            }
+        }
+    }
     
 }

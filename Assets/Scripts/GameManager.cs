@@ -1,10 +1,10 @@
+using System.Collections;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     public int currentPlayerIndex = 0;
     public int totalPlayers = 2;
-
 
     public MapManager mapManager;
     public ProvincialManager provincialManager;
@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public EconomyManager economyManager;
     public BattleManager battleManager;
     public BuildingManager buildingManager;
+    public AIManager aiManager;
 
     void Start()
     {
@@ -22,13 +23,13 @@ public class GameManager : MonoBehaviour
     void InitializeGame()
     {
         mapManager.Initialize();
-        provincialManager.Initialize(totalPlayers,mapManager,buildingManager);
+        provincialManager.Initialize(totalPlayers,mapManager,buildingManager,unitManager);
         uiManager.Initialize(provincialManager,unitManager,economyManager);
-        unitManager.Initialize(uiManager,mapManager,battleManager);
+        unitManager.Initialize(uiManager,mapManager,battleManager,provincialManager);
         economyManager.Initialize();
-        battleManager.Initialize(mapManager);
+        battleManager.Initialize(mapManager,unitManager);
         buildingManager.Initialize();
-        
+        aiManager.Initialize(this,mapManager,unitManager,economyManager,provincialManager,battleManager,totalPlayers-1);
         
         currentPlayerIndex = 0;
         StartTurn();
@@ -45,7 +46,6 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-           
             ProcessAITurn();
         }
     }
@@ -69,13 +69,19 @@ public class GameManager : MonoBehaviour
         StartTurn();
     }
 
-    bool IsHumanPlayer(int playerIndex)
+    public bool IsHumanPlayer(int playerIndex)
     {
         return playerIndex == 0;
     }
 
     void ProcessAITurn()
     {
+        StartCoroutine(ProcessAITurnCoroutine());
+    }
+    
+    private IEnumerator ProcessAITurnCoroutine()
+    {
+        yield return StartCoroutine(aiManager.MakeDecisions());
         EndTurn();
     }
     

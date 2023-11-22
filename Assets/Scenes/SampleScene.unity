@@ -1008,6 +1008,7 @@ GameObject:
   - component: {fileID: 923808201}
   - component: {fileID: 923808202}
   - component: {fileID: 923808203}
+  - component: {fileID: 923808204}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -1027,8 +1028,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5af4a157f6ba9940a65c4c46d4436d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapManager: {fileID: 923808194}
-  buildingManager: {fileID: 923808201}
   provinceColors:
   - {r: 0.13725491, g: 0.42352945, b: 0.94117653, a: 0}
   - {r: 0.9607844, g: 0.32941177, b: 0.47450984, a: 0}
@@ -1073,7 +1072,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentPlayerIndex: 0
-  totalPlayers: 3
+  totalPlayers: 5
   mapManager: {fileID: 923808194}
   provincialManager: {fileID: 923808193}
   uiManager: {fileID: 923808199}
@@ -1081,6 +1080,7 @@ MonoBehaviour:
   economyManager: {fileID: 923808200}
   battleManager: {fileID: 923808202}
   buildingManager: {fileID: 923808201}
+  aiManager: {fileID: 923808204}
 --- !u!4 &923808196
 Transform:
   m_ObjectHideFlags: 0
@@ -1108,14 +1108,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59ca05e146542cc49bdd0861f54f9f3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiManager: {fileID: 923808199}
-  mapManager: {fileID: 923808194}
   unitPrefabsByGrade:
   - {fileID: 7446532276394859500, guid: 5fdc5c6115890124c9cf560d9da29f89, type: 3}
   - {fileID: 5216520283881655875, guid: d16e974318848c54d9c2545ce0c1081c, type: 3}
   - {fileID: 6861057998076165108, guid: 1cdee517f7722484daa36fa53e297d72, type: 3}
   - {fileID: 7953222797898660696, guid: 3cca4ccd39d709a4f8ea512db5b2c6e3, type: 3}
-  battleManager: {fileID: 923808202}
 --- !u!114 &923808199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1128,9 +1125,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b809f0a911cd1cc47808291d47881690, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  provincialManager: {fileID: 923808193}
-  unitManager: {fileID: 923808197}
-  economyManager: {fileID: 923808200}
   totalGoldText: {fileID: 1908120491}
   goldPerTurnText: {fileID: 983259962}
   playerUI: {fileID: 1765012260}
@@ -1172,7 +1166,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a82faf329970b184ba6e2626f4ec3a2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapManager: {fileID: 923808194}
 --- !u!114 &923808203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1191,6 +1184,18 @@ MonoBehaviour:
   provincialManager: {fileID: 923808193}
   battleManager: {fileID: 923808202}
   playerID: 0
+--- !u!114 &923808204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 923808192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e3ccdf9deddea54d8084ce055e4d572, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1275,14 +1280,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.36545157, y: 35.256203, z: -0.33482552}
+  m_LocalRotation: {x: 0.60876137, y: 0, z: 0, w: 0.7933534}
+  m_LocalPosition: {x: 0, y: 31.8, z: -12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 38.569, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 75, y: 0, z: 0}
 --- !u!1 &983259960
 GameObject:
   m_ObjectHideFlags: 0
