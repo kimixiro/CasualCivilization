@@ -1,0 +1,18 @@
+{
+    "name": "SPG.VContainerExtensions",
+    "rootNamespace": "",
+    "references": [
+        "GUID:b0214a6008ed146ff8f122a6a9c2f6cc",
+        "GUID:4f682e06dbb3e624faedad9cc27106cc",
+        "GUID:9c13827d177bf194f8f8ae95e4224284"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

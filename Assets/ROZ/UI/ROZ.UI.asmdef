@@ -1,0 +1,24 @@
+{
+    "name": "SPG.UI",
+    "rootNamespace": "",
+    "references": [
+        "GUID:b0214a6008ed146ff8f122a6a9c2f6cc",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:560b04d1a97f54a4e82edc0cbbb69285",
+        "GUID:e2990f0f11602354b9cacd0e731496e9",
+        "GUID:9c13827d177bf194f8f8ae95e4224284",
+        "GUID:f42d71cb2407f084598828ccaa23b253",
+        "GUID:c1ad74bf9f4247b498e484b720ae1646",
+        "GUID:683653aa161369649878469cc9d3d191",
+        "GUID:645167d24333aed41ab89d14f75e090b"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

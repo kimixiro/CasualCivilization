@@ -1,0 +1,25 @@
+{
+    "name": "SPG.SceneManagement",
+    "rootNamespace": "",
+    "references": [
+        "GUID:b0214a6008ed146ff8f122a6a9c2f6cc",
+        "GUID:08b38f39e2d9e594389b7a4cf4c2c338",
+        "GUID:4f682e06dbb3e624faedad9cc27106cc",
+        "GUID:560b04d1a97f54a4e82edc0cbbb69285",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:93eccf3a5b49b0347be0ca5a0eb25fee",
+        "GUID:e2990f0f11602354b9cacd0e731496e9",
+        "GUID:645167d24333aed41ab89d14f75e090b",
+        "GUID:9c13827d177bf194f8f8ae95e4224284",
+        "GUID:0d1c9ad34d19c26488b00da98f8b9ad1"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
