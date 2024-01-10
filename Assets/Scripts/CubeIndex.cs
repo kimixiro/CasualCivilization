@@ -1,3 +1,6 @@
+using System;
+
+[Serializable]
 public struct CubeIndex {
     public int x, y, z;
 
