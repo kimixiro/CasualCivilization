@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
-using ROZ.MVP;
-using ROZ.MVP.Options;
+using SPG.MVP;
+using SPG.MVP.Options;
 using UniRx;
 using UnityEngine;
 using UnityEngine.Assertions;

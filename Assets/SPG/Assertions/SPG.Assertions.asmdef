@@ -1,0 +1,16 @@
+{
+    "name": "SPG.Assertions",
+    "rootNamespace": "",
+    "references": [
+        "GUID:9c13827d177bf194f8f8ae95e4224284"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

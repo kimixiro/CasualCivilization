@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 using CasualCivilization.GameplayScene.Grid;
-using CasualCivilization.Global.Utils.RX;
-using ROZ.Logging;
+using SPG.Logging;
 using UniRx;
 using UnityEngine.Assertions;
 
@@ -42,13 +41,13 @@ namespace CasualCivilization.GameplayScene.Provinces
             
             _gridModel = gridModel;
 
-            _gridModel.Cells
-                .ObserveAndSubscribe
-                (
-                    OnCellAdded,
-                    OnCellRemoved
-                )
-                .AddTo(_disposable);
+            // _gridModel.Cells
+            //     .ObserveAndSubscribe
+            //     (
+            //         OnCellAdded,
+            //         OnCellRemoved
+            //     )
+            //     .AddTo(_disposable);
         }
             
         public void ChangeOwner(CubeIndex index, int ownerIndex)
