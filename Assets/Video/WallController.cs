@@ -17,17 +17,24 @@ namespace Video
 
         public void RefreshWalls()
         {
-            // First, activate all wall segments in all WallDisplays
+            // First, activate all wall segments in all active WallDisplays
             foreach (var wallDisplay in allWallDisplays)
             {
-                wallDisplay.ActivateAllWallSegments();
+                if (wallDisplay.gameObject.activeInHierarchy) // Check if the WallDisplay is active in the scene
+                {
+                    wallDisplay.ActivateAllWallSegments();
+                }
             }
 
-            // Now, check each WallDisplay against every other one
+            // Now, check each active WallDisplay against every other active WallDisplay
             foreach (var wallDisplay in allWallDisplays)
             {
-                wallDisplay.CheckAndDeactivateWalls(wallLayer, maxCheckDistance);
+                if (wallDisplay.gameObject.activeInHierarchy) // Only proceed if the WallDisplay is active
+                {
+                    wallDisplay.CheckAndDeactivateWalls(wallLayer, maxCheckDistance);
+                }
             }
         }
+
     }
 }

@@ -19,6 +19,9 @@ namespace Video
 
         public void CheckAndDeactivateWalls(LayerMask wallLayer, float maxDistance)
         {
+            // Disable all colliders of this WallDisplay to prevent self-hits
+            SetWallSegmentsCollidersEnabled(false);
+
             for (int i = 0; i < directions.Length; i++)
             {
                 Vector3 dir = transform.TransformDirection(directions[i]);
@@ -33,7 +36,7 @@ namespace Video
                 if (isHit)
                 {
                     WallDisplay hitWallDisplay = hit.collider.GetComponentInParent<WallDisplay>();
-                    if (hitWallDisplay != null)
+                    if (hitWallDisplay != null && hitWallDisplay != this)
                     {
                         // Deactivate the wall segment in this WallDisplay
                         DeactivateWallSegment(i);
@@ -47,13 +50,36 @@ namespace Video
                     }
                 }
             }
+
+            // Re-enable all colliders of this WallDisplay after checks
+            SetWallSegmentsCollidersEnabled(true);
         }
 
+        private void SetWallSegmentsCollidersEnabled(bool enabled)
+        {
+            foreach (var segment in wallSegments)
+            {
+                Collider collider = segment.GetComponent<Collider>();
+                if (collider != null)
+                {
+                    collider.enabled = enabled;
+                }
+            }
+        }
+
+        private void ActivateWallSegment(int index)
+        {
+            if (index >= 0 && index < wallSegments.Length)
+            {
+                wallSegments[index].SetActive(true);
+            }
+        }
+        
         public void ActivateAllWallSegments()
         {
             foreach (var segment in wallSegments)
             {
-                segment.SetActive(true);
+                segment.SetActive(true); // Activate each segment
             }
         }
 

@@ -30,9 +30,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6610854632024899203}
+  - {fileID: 2299878387883831252}
   - {fileID: 6797307446730317095}
   - {fileID: 6695212344433519827}
-  - {fileID: 2299878387883831252}
   - {fileID: 4257703978540259813}
   - {fileID: 4693210523536276412}
   m_Father: {fileID: 0}
@@ -51,12 +51,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallSegments:
-  - {fileID: 5833755738591634489}
   - {fileID: 1486504098208003438}
-  - {fileID: 5362224434045346054}
+  - {fileID: 5833755738591634489}
   - {fileID: 3485143555840181087}
-  - {fileID: 6133678080550111133}
+  - {fileID: 5362224434045346054}
   - {fileID: 6314605826874373737}
+  - {fileID: 6133678080550111133}
 --- !u!1001 &1756533906801461311
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -123,7 +123,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 28a946baff48a2e42a8908755ecfe2d3, type: 3}
       propertyPath: m_Name
-      value: wall_straight L
+      value: wall_straight R
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 28a946baff48a2e42a8908755ecfe2d3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -230,7 +234,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 28a946baff48a2e42a8908755ecfe2d3, type: 3}
       propertyPath: m_Name
-      value: wall_straight LU
+      value: wall_straight RU
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -337,7 +341,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 28a946baff48a2e42a8908755ecfe2d3, type: 3}
       propertyPath: m_Name
-      value: wall_straight RU
+      value: wall_straight LU
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -444,7 +448,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 28a946baff48a2e42a8908755ecfe2d3, type: 3}
       propertyPath: m_Name
-      value: wall_straight RL
+      value: wall_straight LD
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -551,7 +555,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 28a946baff48a2e42a8908755ecfe2d3, type: 3}
       propertyPath: m_Name
-      value: wall_straight LL
+      value: wall_straight RD
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -658,7 +662,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 28a946baff48a2e42a8908755ecfe2d3, type: 3}
       propertyPath: m_Name
-      value: wall_straightR
+      value: wall_straight L
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
